@@ -12,3 +12,5 @@ tsconfig.json
 Dockerfile
 docker-compose.dev.yml
 .dockerignore
+.github
+.github/
