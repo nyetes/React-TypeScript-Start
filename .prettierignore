@@ -9,3 +9,6 @@ package-lock.json
 .env
 .env.exampple
 tsconfig.json
+Dockerfile
+docker-compose.dev.yml
+.dockerignore
