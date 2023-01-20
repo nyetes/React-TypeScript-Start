@@ -1,0 +1,32 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:    
+      - main
+  pull_request:
+    branches:
+      - main
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to the repository
+        uses: actions/checkout@v2
+        
+      - name: Set up NodeJS environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+       
+      - name: Install package dependencies
+        run: npm install
+      
+      - name: Check linting and formatting
+        run: |
+          npm run lint
+          npm run format
+              
+      - name: Create test build
+        run: npm run build
